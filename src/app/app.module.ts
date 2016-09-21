@@ -15,12 +15,12 @@ import { AboutpageComponent } from './aboutpage/aboutpage.component';
 import { BlogpageComponent } from './blogpage/blogpage.component';
 import { ContactpageComponent } from './contactpage/contactpage.component';
 
-import { routing,appRoutingProviders }  from './app.component';
+import { routing, appRoutingProviders }  from './app.component';
+import { Routes, RouterModule } from '@angular/router';
 
-import {
-  LocationStrategy,
-  HashLocationStrategy
-} from '@angular/common';
+const routes: Routes = [
+
+];
 
 @NgModule({
   declarations: [
@@ -41,9 +41,10 @@ import {
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing
+    routing,
+    RouterModule.forRoot(routes, { useHash: true }) 
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
