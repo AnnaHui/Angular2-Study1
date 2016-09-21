@@ -17,6 +17,11 @@ import { ContactpageComponent } from './contactpage/contactpage.component';
 
 import { routing,appRoutingProviders }  from './app.component';
 
+import {
+  LocationStrategy,
+  HashLocationStrategy
+} from '@angular/common';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +43,7 @@ import { routing,appRoutingProviders }  from './app.component';
     HttpModule,
     routing
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
